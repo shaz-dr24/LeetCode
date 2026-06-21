@@ -5,7 +5,7 @@ class Solution {
 
     for(int i = 0; i < c.length; i++) {
 
-        if(haystack.startsWith(needle, i)) {
+        if(haystack.startsWith(needle,i)) {
             return i;
         }
     }
