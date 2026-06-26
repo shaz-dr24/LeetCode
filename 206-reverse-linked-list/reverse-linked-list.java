@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-import java.util.Stack;
+import java.util.*;
 
 class Solution {
     public ListNode reverseList(ListNode head) {
