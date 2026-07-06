@@ -21,9 +21,10 @@ class Solution {
                 (map2.containsKey(s1) && map2.get(s1) != c1)) {
                 return false;
             }
-
+          else{
             map1.put(c1, s1);
             map2.put(s1, c1);
+        }
         }
 
         return true;
