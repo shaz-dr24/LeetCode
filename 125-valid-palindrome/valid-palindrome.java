@@ -17,22 +17,16 @@ class Solution {
                 j++;
             }
         }
-
         char[] tempArr = new char[j];
-
         for (int i = 0; i < j; i++) {
             tempArr[i] = c2[i];
         }
-
         int start = 0;
         int end = tempArr.length - 1;
-
         while (start < end) {
-
             char temp = tempArr[start];
             tempArr[start] = tempArr[end];
             tempArr[end] = temp;
-
             start++;
             end--;
         }
