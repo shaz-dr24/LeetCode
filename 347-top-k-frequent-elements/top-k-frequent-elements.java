@@ -9,7 +9,14 @@ class Solution {
                 map.put(nums[i], 1);
             }
         }
-        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+        PriorityQueue<Integer> pq = new PriorityQueue<>
+        (new Comparator<Integer>() {
+                @Override
+                public int compare(Integer a, Integer b) {
+                    return map.get(b) - map.get(a);
+                }
+            }
+        );
         for (Integer x : map.keySet()) {
             pq.offer(x);
         }
