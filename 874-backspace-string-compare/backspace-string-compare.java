@@ -31,6 +31,11 @@ class Solution {
         while (!st2.isEmpty()) {
             sb2.append(st2.pop());
         }
-        return sb1.toString().equals(sb2.toString());
+        String s1=sb1.toString();
+        String s2=sb2.toString();
+        if(s1.equals(s2)){
+            return true;
+        }
+        return false;
     }
 }
