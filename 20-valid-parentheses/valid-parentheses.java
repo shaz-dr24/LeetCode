@@ -1,15 +1,36 @@
+import java.util.*;
+
 class Solution {
     public boolean isValid(String s) {
 
-        while (s.contains("()") ||
-               s.contains("{}") ||
-               s.contains("[]")) {
+        Stack<Character> st = new Stack<>();
 
-            s = s.replace("()", "");
-            s = s.replace("{}", "");
-            s = s.replace("[]", "");
+        for (char ch : s.toCharArray()) {
+
+            if (ch == '(' || ch == '{' || ch == '[') {
+                st.push(ch);
+            } else {
+
+                if (st.isEmpty()) {
+                    return false;
+                }
+
+                char top = st.pop();
+
+                if (ch == ')' && top != '(') {
+                    return false;
+                }
+
+                if (ch == '}' && top != '{') {
+                    return false;
+                }
+
+                if (ch == ']' && top != '[') {
+                    return false;
+                }
+            }
         }
 
-        return s.length() == 0;
+        return st.isEmpty();
     }
 }
