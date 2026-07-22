@@ -12,17 +12,15 @@ class Solution {
             }
         }
         int ans=0;
-        int odd=0;
         for(Integer x: map.values()){
             if(x%2==0){
                 ans=ans+x;
             }
             else{
                 ans=ans+(x-1);
-                odd=odd+1;
             }
         }
-        if(odd>0){
+        if(ans<s.length()){
           ans=ans+1;
         }
         return ans;
