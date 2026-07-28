@@ -13,9 +13,9 @@ class Solution {
         ArrayList<Map.Entry<String, Integer>> al=new ArrayList<>(map.entrySet());
         //Collections.sort(al,(a,b)-> b.getValue()-a.getValue());
         Collections.sort(al,(a,b)-> {
-    if(b.getValue() != a.getValue()) {
-        return b.getValue() - a.getValue();
-    }
+                      if(b.getValue() != a.getValue()) {
+                           return b.getValue() - a.getValue();
+                     }
     else {
         return a.getKey().compareTo(b.getKey());
     }
