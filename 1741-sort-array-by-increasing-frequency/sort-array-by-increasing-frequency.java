@@ -35,11 +35,9 @@ class Solution {
             }
         }
         int[] result=new int[ans.size()];
-
         for(int i=0;i<result.length;i++){
             result[i]=ans.get(i);
         }
-
         return result;
     }
 }
