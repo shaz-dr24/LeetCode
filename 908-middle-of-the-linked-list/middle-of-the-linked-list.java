@@ -23,10 +23,10 @@ class Solution {
 
     public ListNode middleNode(ListNode head) {
         int count=countNodes(head);
-      int mid = count / 2;
-        ListNode temp = head;
-        for (int i = 0; i < mid; i++) {
-            temp = temp.next;
+      int mid=count/2;
+        ListNode temp=head;
+        for (int i=0;i<mid;i++) {
+            temp=temp.next;
         }
         return temp;
     }
