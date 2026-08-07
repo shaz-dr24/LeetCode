@@ -1,29 +1,45 @@
 import java.util.*;
 class Solution {
-    public String[] findRelativeRanks(int[] score) {
-        int[] temp = score.clone();
-        Arrays.sort(temp);
-        HashMap<Integer, String> map = new HashMap<>();
-        int rank = 1;
-        for (int i = temp.length - 1; i >= 0; i--) {
-            if (rank == 1) {
-                map.put(temp[i], "Gold Medal");
-            } 
-            else if (rank == 2) {
-                map.put(temp[i], "Silver Medal");
-            } 
-            else if (rank == 3) {
-                map.put(temp[i], "Bronze Medal");
-            } 
-            else {
-                map.put(temp[i], String.valueOf(rank));
-            }
-            rank++;
-        }
-        String[] ans = new String[score.length];
-        for (int i = 0; i < score.length; i++) {
-            ans[i] = map.get(score[i]);
-        }
-        return ans;
+    public String[] findRelativeRanks(int[] arr) {
+	LinkedHashMap<Integer, Integer>map=new LinkedHashMap<>();
+	for(int i=0;i<arr.length;i++) {
+		map.put(arr[i], i+1);
+	}
+	System.out.println(map);
+	
+	PriorityQueue<Integer>pq=new PriorityQueue<>(Collections.reverseOrder());
+	for(int i=0;i<arr.length;i++) {
+		pq.offer(arr[i]);
+	}
+	System.out.println(pq);
+	int index=0;
+	String [] res=new String[arr.length];
+	while(!pq.isEmpty()) {
+		int top=pq.poll();
+		for(Map.Entry<Integer,Integer> entry : map.entrySet()) {
+
+		    if(entry.getKey() == top) {
+
+		        int pos = entry.getValue() - 1;
+
+		        if(index == 0) {
+		            res[pos] = "Gold Medal";
+		        }
+		        else if(index == 1) {
+		            res[pos] = "Silver Medal";
+		        }
+		        else if(index == 2) {
+		            res[pos] = "Bronze Medal";
+		        }
+		        else {
+		            res[pos] = String.valueOf(index + 1);
+		        }
+
+		        index++;
+		        break;
+		    }
+		}
+	}
+    return res;
     }
 }
