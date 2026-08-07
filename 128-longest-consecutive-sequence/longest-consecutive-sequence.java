@@ -14,10 +14,7 @@ class Solution {
 		}
 		if(arr[i+1]==arr[i]+1) {
 			curr=curr+1;
-			
-			if(curr>max) {
-				max=curr;
-			}
+		    max=Math.max(curr,max);
 		}
 		else {
 			curr=1;
