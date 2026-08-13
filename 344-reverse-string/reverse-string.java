@@ -1,15 +1,14 @@
+import java.util.*;
 class Solution {
     public void reverseString(char[] s) {
-        int left=0;
-        int right=s.length-1;
-        while(left<right){
-            char temp;
-            temp=s[left];
-            s[left]=s[right];
-            s[right]=temp;
-            left++;
-            right--;
+        StringBuffer sb=new StringBuffer("");
+        int size=s.length;
+        for(int i=0;i<s.length;i++){
+            sb.append(s[i]);
         }
-        
+        String str=sb.reverse().toString();
+        for (int i=0;i<s.length;i++) {
+            s[i]=str.charAt(i);
+        }
     }
 }
