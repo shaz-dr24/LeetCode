@@ -1,28 +1,22 @@
 import java.util.*;
 class Solution {
     public int largestAltitude(int[] gain) {
-        ArrayList<Integer>al=new ArrayList<>();
-       // al.add(0);
-        int [] arr=new int[gain.length+1];
-       // arr[0]=0;
-       // arr[1]=gain[0];
-       int max=Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++){
-         int sum=0;
-         for(int j=0;j<i;j++){
-            sum=sum+gain[j];
-         }
-         al.add(sum);
-        }
-       // int j=1;
-        for(int i=0;i<arr.length;i++){
-            arr[i]=al.get(i);
-        }
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]>max){
-                max=arr[i];
-            }
-        }
-        return max;
+        	int [] ans=new int[gain.length+1];
+    for(int i=0;i<gain.length;i++) {
+    	int sum=0;
+    	for(int j=0;j<=i;j++) {
+    		sum=sum+gain[j];
+    		ans[j+1]=sum;
+    	}
+    }
+    int max=Integer.MIN_VALUE;
+	//System.out.println(Arrays.toString(ans));
+    for(int i=0;i<ans.length;i++) {
+    	if(ans[i]>max) {
+    		max=ans[i];  	
+    	}
+    }
+    //System.out.println(max);
+    return max;
     }
 }
