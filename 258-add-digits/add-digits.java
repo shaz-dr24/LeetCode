@@ -1,24 +1,21 @@
 class Solution {
+    public int addDigits(int n) {
+        	while(n>9) {
+		int val=addNum(n);
+		n=val;
+	}
+	//System.out.println(n);
+    return n;
 
-    public static int sumNum(int num) {
-        int sum = 0;
-
-        while(num > 0){
-            int d;
-            d = num % 10;
-            sum = sum + d;
-            num = num / 10;
-        }
-
-        return sum;
-    }
-
-    public int addDigits(int num) {
-
-        while(num > 9){
-            num = sumNum(num);
-        }
-
-        return num;
-    }
 }
+public static int addNum(int n) {
+	int sum=0;
+	while(n>0) {
+		int d;
+		d=n%10;
+		sum=sum+d;
+		n=n/10;
+	}
+	return sum;
+}
+    }
