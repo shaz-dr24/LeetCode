@@ -5,8 +5,8 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             al.add(nums[i]);
         }
-        for(int i=0;i<nums.length;i++){
-            for(int j=i+1;j<nums.length;j++){
+        for(int i=0;i<al.size();i++){
+            for(int j=i+1;j<al.size();j++){
             if(al.get(i)+al.get(j)==target){
                 return new int[]{i, j};
             }
