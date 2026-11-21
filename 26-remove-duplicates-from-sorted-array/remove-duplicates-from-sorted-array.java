@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 class Solution {
@@ -5,19 +6,19 @@ class Solution {
 
         HashSet<Integer> set = new HashSet<>();
 
-        int k = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-
-            if (!set.contains(nums[i])) {
-
-                set.add(nums[i]);
-
-                nums[k] = nums[i];
-                k++;
-            }
+        for(int i = 0; i < nums.length; i++) {
+            set.add(nums[i]);
         }
 
-        return k;
+        int j = 0;
+
+        for(Integer x : set) {
+            nums[j] = x;
+            j++;
+        }
+
+        Arrays.sort(nums, 0, j);
+
+        return j;
     }
 }
